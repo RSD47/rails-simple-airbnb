@@ -1,0 +1,20 @@
+<h1 class="m-3">All our Flats (<%= @flats.count %>)</h1>
+<div class="container d-flex flex-wrap">
+  <% @flats.each do |flat| %>
+    <div class="m-2" style="width: 48.5%;">
+      <div class="p-2" style="height: 150px; background-color: rgb(243,243,244); border: 1px solid rgb(223, 227, 231); border-bottom: 0;">
+        <h3><%= flat.name %></h3>
+        <p class="mb-4"><%= flat.address %></p>
+        <div class="d-flex">
+          <p class="me-2 fa-solid fa-user-group"><%= flat.number_of_guests %></p>
+          <p class="fa-solid fa-euro-sign"><%= flat.price_per_night %></p>
+        </div>
+      </div>
+      <div class="border p-1" style="height: 35px;">
+        <%= link_to("More info", flat_path(flat), class: "text-primary text-decoration-none") %>
+        <%= link_to("Edit", edit_flat_path(flat), class: "text-warning text-decoration-none") %>
+        <%= link_to("Remove", flat_path(flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger text-decoration-none") %>
+      </div>
+    </div>
+  <% end %>
+</div>

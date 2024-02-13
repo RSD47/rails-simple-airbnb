@@ -1,0 +1,26 @@
+<div class="container d-flex">
+  <main>
+    <div class="m-3">
+      <h1><%= @flat.name %></h1>
+      <p><%= @flat.address %></p>
+    </div>
+    <div class="m-3">
+      <h2>A bit more about this flat</h2>
+      <p><%= @flat.description %></p>
+    </div>
+    <div class="m-3">
+      <h2>Details</h2>
+      <div>
+        <p class="fa-solid fa-euro-sign"><%= @flat.number_of_guests %></p>
+        <p class="fa-solid fa-user-group"><%= @flat.price_per_night %></p>
+      </div>
+    </div>
+  </main>
+  <form action="#">
+    <label for="#">From:</label>
+    <input type="text">
+    <label for="#">To:</label>
+    <input type="text" id="To">
+    <input type="submit">
+  </form>
+</div>
